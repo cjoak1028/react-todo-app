@@ -6,7 +6,7 @@ function Todo(props) {
     return (
         <List className="todo__list">
             <ListItem>
-                <ListItemText primary={props.text} secondary="Dummy Deadline" />
+                <ListItemText primary={props.text} secondary="Dummy Deadline ⏰ " />
             </ListItem>
         </List>
     )
