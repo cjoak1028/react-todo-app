@@ -31,7 +31,7 @@ function App() {
 
     // this code here ... fires when the App.js loads
     onSnapshot(query(collection(db, 'todos'), orderBy('timestamp', 'desc')), (snapshot) => {
-      setTodos(snapshot.docs.map(doc => doc.data().todo));
+      setTodos(snapshot.docs.map(doc => ({ id: doc.id, todo: doc.data().todo })));
     })
   }, [])
   
@@ -64,7 +64,7 @@ function App() {
 
       <ul>
         {todos.map(todo => (
-          <Todo text={todo}/>
+          <Todo todo={todo}/>
         ))}
       </ul>
     </div>
